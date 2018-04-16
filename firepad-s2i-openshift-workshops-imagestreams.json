@@ -1,0 +1,51 @@
+{
+    "apiVersion": "v1",
+    "kind": "ImageStream",
+    "metadata": {
+        "annotations": {
+            "openshift.io/display-name": "Firepad OpenShift Workshops s2i (based on httpd)"
+        },
+        "name": "firepad-s2i-openshift-workshops"
+    },
+    "spec": {
+        "tags": [
+            {
+                "annotations": {
+                    "description": "Displays a firepad site for OpenShift workshops. A message.txt file can be added through s2i for additional instructions or users",
+                    "iconClass": "fa fa-fire",
+                    "openshift.io/display-name": "Firepad OpenShift Workshops s2i (Latest)",
+                    "openshift.io/provider-display-name": "openshift-evangelists",
+                    "supports": "httpd",
+                    "tags": "builder,httpd"
+                },
+                "from": {
+                    "kind": "ImageStreamTag",
+                    "name": "0.0.1"
+                },
+                "name": "latest",
+                "referencePolicy": {
+                    "type": "Local"
+                }
+            },
+            {
+                "annotations": {
+                    "description": "Displays a firepad site for OpenShift workshops. A message.txt file can be added through s2i for additional instructions or users",
+                    "iconClass": "fa fa-fire",
+                    "openshift.io/display-name": "Firepad OpenShift Workshops s2i (Latest)",
+                    "openshift.io/provider-display-name": "openshift-evangelists",
+                    "supports": "httpd",
+                    "tags": "builder,httpd",
+                    "version": "0.0.1"
+                },
+                "from": {
+                    "kind": "DockerImage",
+                    "name": "docker.io/jorgemoralespou/firepad-s2i-openshift-workshops:0.0.1"
+                },
+                "name": "0.0.1",
+                "referencePolicy": {
+                    "type": "Local"
+                }
+            }
+        ]
+    }
+}
